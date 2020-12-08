@@ -74,7 +74,7 @@ class LoginViewController: UIViewController {
     
     private let termsButton:UIButton = {
         let button = UIButton()
-        button.setTitle("Terms of Service", for: .normal)
+        button.setTitle("Developer Bio", for: .normal)
         button.setTitleColor(.secondaryLabel, for: .normal)
         
         return button
@@ -230,7 +230,7 @@ class LoginViewController: UIViewController {
         }
     }
     @objc private func didTapTermsButton(){
-        guard let url = URL(string:"https://help.instagram.com/581066165581870") else{
+        guard let url = URL(string:"https://linkedin.com/in/dohyungkims") else{
             return
         }
         
