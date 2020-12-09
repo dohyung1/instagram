@@ -11,6 +11,10 @@
 		C3481153257DE78A00EFDACD /* AuthMgr.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3481152257DE78A00EFDACD /* AuthMgr.swift */; };
 		C3481156257DE7D100EFDACD /* StorageMgr.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3481155257DE7D100EFDACD /* StorageMgr.swift */; };
 		C348116D257DEDC200EFDACD /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C348116C257DEDC200EFDACD /* Extensions.swift */; };
+		C34811732580739700EFDACD /* IGFeedPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34811722580739700EFDACD /* IGFeedPostTableViewCell.swift */; };
+		C3481177258075CC00EFDACD /* IGFeedPostHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3481176258075CC00EFDACD /* IGFeedPostHeaderTableViewCell.swift */; };
+		C348117B258075ED00EFDACD /* IGFeedPostActionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C348117A258075ED00EFDACD /* IGFeedPostActionsTableViewCell.swift */; };
+		C348117E2580761100EFDACD /* IGFeedPostGeneralTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C348117D2580761100EFDACD /* IGFeedPostGeneralTableViewCell.swift */; };
 		C3B24045257DBB3400C290BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B24044257DBB3400C290BB /* AppDelegate.swift */; };
 		C3B24047257DBB3400C290BB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B24046257DBB3400C290BB /* SceneDelegate.swift */; };
 		C3B24049257DBB3400C290BB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B24048257DBB3400C290BB /* HomeViewController.swift */; };
@@ -42,6 +46,10 @@
 		C3481152257DE78A00EFDACD /* AuthMgr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthMgr.swift; sourceTree = "<group>"; };
 		C3481155257DE7D100EFDACD /* StorageMgr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageMgr.swift; sourceTree = "<group>"; };
 		C348116C257DEDC200EFDACD /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		C34811722580739700EFDACD /* IGFeedPostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGFeedPostTableViewCell.swift; sourceTree = "<group>"; };
+		C3481176258075CC00EFDACD /* IGFeedPostHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGFeedPostHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		C348117A258075ED00EFDACD /* IGFeedPostActionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGFeedPostActionsTableViewCell.swift; sourceTree = "<group>"; };
+		C348117D2580761100EFDACD /* IGFeedPostGeneralTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGFeedPostGeneralTableViewCell.swift; sourceTree = "<group>"; };
 		C3B24041257DBB3400C290BB /* instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3B24044257DBB3400C290BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3B24046257DBB3400C290BB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +120,25 @@
 			path = General;
 			sourceTree = "<group>";
 		};
+		C34811712580734700EFDACD /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C3481175258075A600EFDACD /* Home Feed */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		C3481175258075A600EFDACD /* Home Feed */ = {
+			isa = PBXGroup;
+			children = (
+				C34811722580739700EFDACD /* IGFeedPostTableViewCell.swift */,
+				C3481176258075CC00EFDACD /* IGFeedPostHeaderTableViewCell.swift */,
+				C348117A258075ED00EFDACD /* IGFeedPostActionsTableViewCell.swift */,
+				C348117D2580761100EFDACD /* IGFeedPostGeneralTableViewCell.swift */,
+			);
+			path = "Home Feed";
+			sourceTree = "<group>";
+		};
 		C3B24038257DBB3400C290BB = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +181,7 @@
 		C3B2405A257DBB8C00C290BB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C34811712580734700EFDACD /* Cells */,
 				C3B2405D257DBBC200C290BB /* Storyboards */,
 				C3B2404D257DBB3800C290BB /* Assets.xcassets */,
 			);
@@ -341,19 +369,23 @@
 				C3481153257DE78A00EFDACD /* AuthMgr.swift in Sources */,
 				C3481150257DE6F800EFDACD /* DatabaseMgr.swift in Sources */,
 				C3B2407A257DBD2700C290BB /* EditProfilesViewController.swift in Sources */,
+				C3481177258075CC00EFDACD /* IGFeedPostHeaderTableViewCell.swift in Sources */,
 				C3481156257DE7D100EFDACD /* StorageMgr.swift in Sources */,
 				C3B24049257DBB3400C290BB /* HomeViewController.swift in Sources */,
 				C3B24074257DBCF800C290BB /* RegistrationViewController.swift in Sources */,
 				C3B24089257DBD8100C290BB /* PostEditorViewController.swift in Sources */,
 				C3B24077257DBD0700C290BB /* PostViewController.swift in Sources */,
+				C34811732580739700EFDACD /* IGFeedPostTableViewCell.swift in Sources */,
 				C3B24066257DBC6800C290BB /* NotificationsViewController.swift in Sources */,
 				C3B24086257DBD5400C290BB /* SearchResultViewController.swift in Sources */,
 				C348116D257DEDC200EFDACD /* Extensions.swift in Sources */,
+				C348117E2580761100EFDACD /* IGFeedPostGeneralTableViewCell.swift in Sources */,
 				C3B24070257DBCEB00C290BB /* LoginViewController.swift in Sources */,
 				C3B24083257DBD4A00C290BB /* SearchViewController.swift in Sources */,
 				C3B24069257DBC7300C290BB /* ProfileViewController.swift in Sources */,
 				C3B24045257DBB3400C290BB /* AppDelegate.swift in Sources */,
 				C3B24047257DBB3400C290BB /* SceneDelegate.swift in Sources */,
+				C348117B258075ED00EFDACD /* IGFeedPostActionsTableViewCell.swift in Sources */,
 				C3B24080257DBD3D00C290BB /* ListViewController.swift in Sources */,
 				C3B2407D257DBD3200C290BB /* SettingsViewController.swift in Sources */,
 			);

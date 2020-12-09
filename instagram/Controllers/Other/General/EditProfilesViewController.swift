@@ -11,19 +11,48 @@ class EditProfilesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save",
+                                                            style: .done,
+                                                            target: self,
+                                                            action: #selector(didTapSave))
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel",
+                                                           style: .plain,
+                                                            target: self,
+                                                            action: #selector(didTapCancel))
+        view.backgroundColor = .systemBackground
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @objc private func didTapSave(){
+        
     }
-    */
-
+    
+    @objc private func didTapCancel(){
+        self.navigationController?.popToRootViewController(animated: false)
+    }
+    
+    @objc private func didTapChangeProfilePic(){
+        
+        let actionsheet = UIAlertController(title: "Profile Picture",
+                                            message: "Change Profile Picture",
+                                            preferredStyle: .actionSheet)
+        
+        actionsheet.addAction(UIAlertAction(title: "Take Photo", style: .default, handler: {_ in
+                                            
+        }))
+        
+        actionsheet.addAction(UIAlertAction(title: "Choose From Library", style: .default, handler: {_ in
+                                            
+        }))
+        
+        actionsheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        actionsheet.popoverPresentationController?.sourceView = view
+        actionsheet.popoverPresentationController?.sourceRect = view.bounds
+        
+        present(actionsheet, animated: true)
+        
+    }
 }
