@@ -12,10 +12,7 @@ public class StorageMgr{
     static let shared = StorageMgr()
     
     private let bucket = Storage.storage().reference()
-    
-    
-    
-    
+
     // MARK: - Public
     
     public func uploadUserPost(mode:UserPost, completion: @escaping (Result<URL,Error>) -> Void){
@@ -40,15 +37,6 @@ public class StorageMgr{
 }
 public enum IGStorageManagerError : Error{
     case failedToDownload
-}
-
-public enum UserPostType{
-    case photo,video
-}
-
-public struct UserPost{
-    let postType:UserPostType
-    
 }
 
 
