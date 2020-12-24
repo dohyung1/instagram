@@ -118,7 +118,7 @@ extension ProfileViewController : UICollectionViewDelegate, UICollectionViewData
             let tabControlHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
                                                                          withReuseIdentifier: ProfileTabsCollectionReusableView.identifier,
                                                                          for: indexPath) as! ProfileTabsCollectionReusableView
-            
+            tabControlHeader.delegate = self
             return tabControlHeader
         }
         
@@ -137,7 +137,7 @@ extension ProfileViewController : UICollectionViewDelegate, UICollectionViewData
         
         //Size of section tabs
         return CGSize(width: collectionView.width,
-                      height: 65)
+                      height: 50)
     }
     
     
@@ -152,14 +152,14 @@ extension ProfileViewController : ProfileInfoHeaderCollectionReusableDelegate{
     }
     
     func profileHeaderDidTapFollowersButton(_ header: ProfileInfoHeaderCollectionReusableView) {
-        let vc = ListViewController()
+        let vc = ListViewController(data: ["Joe", "Joe", "Joe", "Joe"])
         vc.title = "Followers"
         vc.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(vc, animated: true)
     }
     
     func profileHeaderDidTapFollowingButton(_ header: ProfileInfoHeaderCollectionReusableView) {
-        let vc = ListViewController()
+        let vc = ListViewController(data: ["Joe", "Joe", "Joe", "Joe"])
         vc.title = "Following"
         vc.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(vc, animated: true)
@@ -172,4 +172,15 @@ extension ProfileViewController : ProfileInfoHeaderCollectionReusableDelegate{
     }
     
     
+}
+
+extension ProfileViewController : ProfileTabsCollectionReusableViewDelegate{
+    func didTapGridButtonTab() {
+        //Reload Collectionview with data
+    }
+    
+    func didTapTaggedButtonTab() {
+        //Reload Collectionview with data
+        
+    }
 }
