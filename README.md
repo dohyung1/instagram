@@ -1,3 +1,3 @@
 # instagram
 
-Instagram Mock
+This is an Instagram mock app.
