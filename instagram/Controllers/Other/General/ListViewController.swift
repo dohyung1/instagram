@@ -9,16 +9,18 @@ import UIKit
 
 class ListViewController: UIViewController {
 
-    private let data: [String]
+    private let data: [UserRelationship]
     
     private let tableView : UITableView = {
         let tableView = UITableView()
-        tableView.register(UITableViewCell.self,
+        tableView.register(UserFollowTableViewCell.self,
                            forCellReuseIdentifier: UserFollowTableViewCell.identifier)
         return tableView
     }()
     
-    init(data: [String]) {
+    //MARK - Init
+    
+    init(data: [UserRelationship]) {
         self.data = data
         super.init(nibName: nil, bundle: nil)
     }
@@ -48,8 +50,8 @@ extension ListViewController : UITableViewDelegate, UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: UserFollowTableViewCell.identifier,
                                                  for: indexPath) as! UserFollowTableViewCell
         
-        cell.configure(with: "")
-        
+        cell.configure(with: data[indexPath.row])
+        cell.delegate = self
         return cell
     }
     
@@ -67,4 +69,23 @@ extension ListViewController : UITableViewDelegate, UITableViewDataSource{
         //goto profile of selected cell
         let model = data[indexPath.row]
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 75
+    }
+}
+
+extension ListViewController : UserFollowTableViewCellDelegate{
+    func didTapFollowUnfollowButton(model: UserRelationship) {
+        switch model.type{
+        case.following:
+            //perform firebase update to unfollow
+            break
+        case.not_following:
+            //perform update to follow
+            break
+        }
+    }
+    
+    
 }
