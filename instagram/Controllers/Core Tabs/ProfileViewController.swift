@@ -100,8 +100,28 @@ extension ProfileViewController : UICollectionViewDelegate, UICollectionViewData
         
         //get model and open post controller
         //let model = userPosts[indexPath.row]
-        let vc = PostViewController(model: nil)
-        vc.title = "Post"
+        let user = User(username: "joe",
+                        bio: "",
+                        name: (first: "", last: ""),
+                        birthDate: Date(),
+                        profilePhoto: URL(string: "https://www.google.com/")!,
+                        gender: .male,
+                        counts: UserCount(followers: 1, following: 1, posts: 1),
+                        joinDate: Date())
+        
+        let post = UserPost(identifier: "",
+                            postType: .photo,
+                            thumbnailImage: URL(string:"https://www.google.com/")!,
+                            caption: nil,
+                            likes: [],
+                            postURL: URL(string:"https://www.google.com/")!,
+                            comments: [],
+                            createdDate: Date(),
+                            taggedUsers: [],
+                            owner: user)
+        
+        let vc = PostViewController(model: post)
+        vc.title = post.postType.rawValue
         vc.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(vc, animated: true)
     }
